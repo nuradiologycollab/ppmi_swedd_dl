@@ -54,8 +54,7 @@ class RenameImages:
 				#we iterate through all the files - in our case we had just one file per directory
 				#but it doesn't matter
 			    for file in files:
-			    	name, ext = os.path.splitext(file)
-			    	if ext != ('.dcm'):
+			    	if self.check_file(file) ==False:
 			    		continue
 			    	file_name =  (os.path.join(subdir, file))
 			    	curr_image = pydicom.dcmread(file_name)
@@ -85,14 +84,20 @@ class RenameImages:
 			#we iterate through all the files - in our case we had just one file per directory
 			#but it doesn't matter
 		    for file in files:
-		    	name, ext = os.path.splitext(file)
-		    	if ext != ('.dcm'):
+		    	if self.check_file(file) ==False:
 		    		continue
+
 		    	file_name =  (os.path.join(subdir, file))
 		    	curr_image = pydicom.dcmread(file_name)
 		    	print("Name of current image - ", curr_image.PatientName)
 		    	print("Id of current image - ", curr_image.PatientID)
 		    	print('')
+
+
+	def check_file(self,file):
+		name, ext = os.path.splitext(file)
+		if ext != ('.dcm'):
+			return False
 
 
     
