@@ -14,4 +14,3 @@ obj = RenameImages(rootdir)
 # obj.check_names()
 obj.rename_images()
 # obj.check_names()
-
