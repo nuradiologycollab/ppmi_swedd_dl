@@ -1,4 +1,4 @@
 # ppmi_swedd_dl
-The repository has two tasks:
-1) Make cahnges to the raw data downloaded from PPMI.
-2) Upload to XNAT
+The repository performs two tasks:
+1) Make changes to the raw data downloaded from PPMI.
+2) Upload Data to XNAT
