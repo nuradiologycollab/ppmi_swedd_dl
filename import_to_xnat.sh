@@ -13,7 +13,7 @@ set -x
 XNAT_USER="mayankmalik01"
 
 # Put your own password
-XNAT_PASS='qwerty12345'
+XNAT_PASS=''
 
 XNAT_ROOT='https://nunda.northwestern.edu:8443/nunda'
 
