@@ -45,15 +45,15 @@ do
   trap "rm -r $TMPDIR" EXIT
   cd ${TMPDIR}
 
-  for session_dir in ${SUBJECT_DATA_DIR}/*
-  do
-    session=${session_dir##*/} 
+#for session_dir in ${SUBJECT_DATA_DIR}/*
+#do
+    session=${SUBJECT_DATA_DIR##*/}
     code="BL"
     if [ ${code} ]; then
       echo "Session=$session, Code=$code"
       echo "Starting to zip"
       # copy the zip files with all sessions into the temp directory
-      cp -r "${session_dir}" ${TMPDIR}/${code}
+      cp -r "${SUBJECT_DATA_DIR}" ${TMPDIR}/${code}
       ZIP_SESSION_FILE="${TMPDIR}/${SUBJECT}_${code}.zip"
       zip -r ${ZIP_SESSION_FILE} "${code}"
       ls -al $ZIP_SESSION_FILE
@@ -67,6 +67,6 @@ do
     else
          echo "Unknown code for ${session_dir}. Skipping..."
     fi
-  done
+#done
 
 done
